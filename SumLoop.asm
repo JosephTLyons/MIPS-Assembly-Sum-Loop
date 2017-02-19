@@ -1,4 +1,4 @@
-# Title: Programming Project Part 1		#Filename: Part1.asm
+# Title: Programming Project Part 1		#Filename: SumLoop.asm
 # Author: Joseph Lyons				#Date: February 15th, 2017
 # Description: Program accepts numbers from user and adds them together, terminates at input of 0
 # Input: User enter numbers
