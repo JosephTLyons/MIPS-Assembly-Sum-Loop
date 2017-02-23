@@ -11,7 +11,8 @@ outputString:  .asciiz "Total sum of numbers: "
 ################# Code segment #####################
 .text
 .globl main
-main: # main program entry
+
+main:
 
       add  $s1, $zero, $zero  # Initialize $s1 to zero - reserved for our total sum
 
