@@ -21,8 +21,8 @@ Loop: li   $v0, 4             # Load system call to print input string
     
       li   $v0, 5             # Load system call to read number from user
       syscall
-    
-      add  $s1, $s1, $v0      # Add number to total sum
+
+      add  $s1, $s1,   $v0    # Add number to total sum
       bne  $v0, $zero, Loop   # Loop if last number wasn't 0
       
       li   $v0, 4             # Load system call to print output string
