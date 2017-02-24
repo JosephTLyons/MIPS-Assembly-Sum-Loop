@@ -23,10 +23,8 @@ Loop: addi $v0, $zero, 4      # Load system call to print input string
       addi $v0, $zero, 5      # Load system call to read number from user
       syscall
     
-      add  $a0, $v0, $zero    # Move user value from $v0 to $a0
-      add  $s1, $s1, $a0      # Add number to total sum
-      
-      bne  $a0, $zero, Loop   # Loop if last number wasn't 0
+      add  $s1, $s1, $v0      # Add number to total sum
+      bne  $v0, $zero, Loop   # Loop if last number wasn't 0
       
       addi $v0, $zero, 4      # Load system call to print output string
       la   $a0, outputString  # Load output string for printing
