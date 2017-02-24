@@ -13,25 +13,22 @@ outputString:  .asciiz "Total sum of numbers: "
 .globl main
 
 main:
-
       add  $s1, $zero, $zero  # Initialize $s1 to zero - reserved for our total sum
 
-Loop: addi $v0, $zero, 4      # Load system call to print input string
+Loop: li   $v0, 4             # Load system call to print input string
       la   $a0, inputString   # Load input string for printing
       syscall
     
-      addi $v0, $zero, 5      # Load system call to read number from user
+      li   $v0, 5             # Load system call to read number from user
       syscall
     
       add  $s1, $s1, $v0      # Add number to total sum
       bne  $v0, $zero, Loop   # Loop if last number wasn't 0
       
-      addi $v0, $zero, 4      # Load system call to print output string
+      li   $v0, 4             # Load system call to print output string
       la   $a0, outputString  # Load output string for printing
       syscall
       
+      li   $v0, 1             # Load system call to print string
       add  $a0, $s1, $zero    # Load sum into $a0 for printing
-      addi $v0, $zero, 1      # Load system call to print string
       syscall
-      
-      ### FIX LA COMMANDS - THESE ARE PSEUDO AND CANT BE USED IN FINAL
